@@ -46,10 +46,10 @@ export default function DashboardPage() {
                       Coming Soon
                     </Button>
                   ) : (
-                    <Link href={app.href} passHref>
+                    <Link href={app.href}>
                       <Button className="w-full">
                         Open App
-                        <ArrowRight className="ml-2 h-4 w-4" />
+                        <ArrowRight className="h-4 w-4" />
                       </Button>
                     </Link>
                   )}
