@@ -1,0 +1,26 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        # Install pnpm globally
+        - npm install -g pnpm@8
+        # Install all dependencies
+        - pnpm install
+    build:
+      commands:
+        # Build the dashboard app (runs: pnpm --filter dashboard build)
+        - pnpm build
+  artifacts:
+    # For Next.js apps, Amplify needs the entire app directory
+    baseDirectory: apps/dashboard
+    files:
+      - '**/*'
+  cache:
+    paths:
+      # Cache node_modules for faster subsequent builds
+      - node_modules/**/*
+      - apps/dashboard/node_modules/**/*
+      # Cache Next.js build for faster rebuilds
+      - apps/dashboard/.next/cache/**/*
+
