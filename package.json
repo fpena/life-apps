@@ -1,0 +1,14 @@
+{
+  "name": "life-apps",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter dashboard dev",
+    "build": "pnpm --filter dashboard build",
+    "start": "pnpm --filter dashboard start"
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  }
+}
